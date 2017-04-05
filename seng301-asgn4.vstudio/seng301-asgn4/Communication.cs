@@ -8,26 +8,23 @@ using Frontend4.Hardware;
 
 namespace seng301_asgn4
 {
+  
+
     public class CommunicationFacade
     {
         public event EventHandler<SelectionEventArgs> SelectionMade;
 
         HardwareFacade hf;
-        int buttonNum;
+
         public CommunicationFacade(HardwareFacade hf)
         {
             this.hf = hf;
-            SetListeners();
-        }
-
-
-        public void SetListeners()
-        {
             foreach (SelectionButton B in this.hf.SelectionButtons)
             {
                 B.Pressed += new EventHandler(ButtonPressed);
             }
         }
+
 
         // What happens when hears a button was pressed
         // gets index value of the button
@@ -59,7 +56,7 @@ namespace seng301_asgn4
     }
 
     // new subclass of event args
-    public class SelectionEventArgs: EventArgs
+    public class SelectionEventArgs : EventArgs
     {
         public int Index { get; set; }
     }

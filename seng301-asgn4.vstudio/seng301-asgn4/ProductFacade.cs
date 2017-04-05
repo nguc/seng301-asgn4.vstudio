@@ -18,12 +18,13 @@ namespace seng301_asgn4
 
         public int getCost(int index)
         {
-            return hf.ProductList[index].Cost.Value;
+            int cost =  this.hf.ProductKinds[index].Cost.Value;
+            return cost;
         }
 
         public void Dispense(int index)
         {
-            Vend.Hardware.ProductRacks.ElementAt(index).DispenseProduct();
+            hf.ProductRacks.ElementAt(index).DispenseProduct();
         }
 
     }

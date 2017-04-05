@@ -16,9 +16,9 @@ namespace seng301_asgn4
 
         int paid;
         int index;
-       
-
+        int change;
         int[] CoinIndex;
+
 
         public Logic(PaymentFacade Payment, ProductFacade Product, CommunicationFacade Com)
         {
@@ -30,35 +30,28 @@ namespace seng301_asgn4
             Payment.PaymentMade += new EventHandler<PaymentEventArgs>(PaymentAccepted);
 
         }
-
-        public void Change(int change)
-        {
-            Cents[]  Denom = Payment.GetCoinKinds();
-            int j;
-            int k;
-            while(change > Denom[0].Value)
-            {
-                k = 0;
-                while(k < Denom.Length)
-                {
-                    j = Denom[k].Value;
-                    if(j <= change)
-                    {
-                        change = change - j;
-                        Payment.DispenseCoin(k);
-                    }
-                    k++;
-                }
-            }
-        }
+   
+        // get product that is located at the button index
         public void ButtonPressed(object sender, SelectionEventArgs e)
         {
-            this.index = e.Index;
+            index = e.Index;
+            int price = Product.getCost(index);
+
+            if (price <= paid)
+            {
+                Product.Dispense(index);
+                change = paid - price;
+                paid = Payment.Change(change);       
+            }
         }
 
+        // increment payment value 
         public void PaymentAccepted(object sender, PaymentEventArgs e)
         {
-            this.paid = +e.PaymentValue;
+            this.paid =+ e.PaymentValue;
+            
         }
+
+   
     }
 }

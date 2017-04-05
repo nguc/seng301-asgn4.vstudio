@@ -11,14 +11,8 @@ using seng301_asgn4;
  * 
  */
 public class VendingMachine {
-    public List<ProductKind> ProductList;
-    private HardwareFacade hardwareFacade;
-    private PaymentFacade Payment;
-    private CommunicationFacade Com;
-    private ProductFacade Product;
-    private int buttonNum;
 
-    public Logic logic;
+  
     public HardwareFacade Hardware {
         get {
             return this.hardwareFacade;
@@ -52,16 +46,26 @@ public class VendingMachine {
      *             If any of the arguments is null, or the size of productCosts
      *             and productNames differ.
      */
+
+    
+    public HardwareFacade hardwareFacade;
+    public PaymentFacade Payment;
+    public CommunicationFacade Com;
+    public ProductFacade Product;
+    public Logic logic;
+    public List<ProductKind> ProductList;
+    private int buttonNum;
+
+
     public VendingMachine(Cents[] coinKinds, int selectionButtonCount, int coinRackCapacity, int productRackCapacity, int receptacleCapacity) {
 	    this.hardwareFacade = new HardwareFacade(coinKinds, selectionButtonCount, coinRackCapacity, productRackCapacity, receptacleCapacity);
+        /* YOU CAN BUILD AND INSTALL THE HARDWARE HERE */
+
         this.Payment = new PaymentFacade(hardwareFacade);
         this.Product = new ProductFacade(hardwareFacade);
         this.Com = new CommunicationFacade(hardwareFacade);
         buttonNum = selectionButtonCount;
-
         this.logic = new Logic(Payment, Product, Com);
-	    /* YOU CAN BUILD AND INSTALL THE HARDWARE HERE */
-
     }
 
     public void Configure(List<ProductKind> ProductList)

@@ -12,8 +12,9 @@ namespace seng301_asgn4
     {
         public event EventHandler<PaymentEventArgs> PaymentMade;
 
-        HardwareFacade HF;
+        HardwareFacade hf;
         Cents[] CoinKinds;
+        Dictionary<int, int> coinKindToCoinRackIndex;
         int coinValue;
         
         int Value;
@@ -21,18 +22,25 @@ namespace seng301_asgn4
 
         public PaymentFacade(HardwareFacade hf)
         {
-            this.HF = hf;
+            this.hf = hf;
+            this.coinKindToCoinRackIndex = new Dictionary<int, int>();
+            for (int i = 0; i < this.hf.CoinRacks.Length; i++)
+            {
+                this.coinKindToCoinRackIndex[this.hf.GetCoinKindForCoinRack(i).Value] = i;
+            }
             //this.CoinKinds = CoinKinds;
             hf.CoinSlot.CoinAccepted += new EventHandler<CoinEventArgs>(CoinAccept);
             
         }
+
+
         public void CoinAccept(object sender, CoinEventArgs e)
         {
             coinValue = e.Coin.Value.Value;
             Payment(coinValue);
         }
 
-
+        // Fire event to logic giving it the value of the payment
         public void Payment(int coinValue)
         {
             if (this.PaymentMade != null)
@@ -42,20 +50,29 @@ namespace seng301_asgn4
         }
 
 
-        public int getValue()
+        // Code taken from Tony Tang A2 solution - calculates change to be dispensed
+        public int Change(int change)
         {
-            return Value;
+            while (change > 0)
+            {
+                var coinRacksWithMoney = this.coinKindToCoinRackIndex.Where(ck => ck.Key <= change && this.hf.CoinRacks[ck.Value].Count > 0).OrderByDescending(ck => ck.Key);
+
+                if (coinRacksWithMoney.Count() == 0)
+                {
+                    return change; // this is what's left as available funds
+                }
+
+                var biggestCoinRackCoinKind = coinRacksWithMoney.First().Key;
+                var biggestCoinRackIndex = coinRacksWithMoney.First().Value;
+                var biggestCoinRack = this.hf.CoinRacks[biggestCoinRackIndex];
+
+                change = change - biggestCoinRackCoinKind;
+                biggestCoinRack.ReleaseCoin();
+            }
+
+            return 0;
         }
 
-        public void DispenseCoin(int index)
-        {
-            HF.CoinRacks[index].ReleaseCoin();
-        }
-
-        public Cents[] GetCoinKinds()
-        {
-            return CoinKinds;
-        }
 
     }
 

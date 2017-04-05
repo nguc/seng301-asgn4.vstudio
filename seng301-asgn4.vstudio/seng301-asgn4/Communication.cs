@@ -55,7 +55,7 @@ namespace seng301_asgn4
 
     }
 
-    // new subclass of event args
+    // new selection event args subclass
     public class SelectionEventArgs : EventArgs
     {
         public int Index { get; set; }

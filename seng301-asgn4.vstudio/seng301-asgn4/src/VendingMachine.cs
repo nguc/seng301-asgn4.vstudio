@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Frontend4;
 using Frontend4.Hardware;
 using seng301_asgn4;
@@ -12,7 +13,15 @@ using seng301_asgn4;
  */
 public class VendingMachine {
 
-  
+    public HardwareFacade hardwareFacade;
+    public PaymentFacade Payment;
+    public CommunicationFacade Com;
+    public ProductFacade Product;
+    public Logic logic;
+
+    public List<ProductKind> ProductList;
+    private int buttonNum;
+
     public HardwareFacade Hardware {
         get {
             return this.hardwareFacade;
@@ -47,16 +56,6 @@ public class VendingMachine {
      *             and productNames differ.
      */
 
-    
-    public HardwareFacade hardwareFacade;
-    public PaymentFacade Payment;
-    public CommunicationFacade Com;
-    public ProductFacade Product;
-    public Logic logic;
-    public List<ProductKind> ProductList;
-    private int buttonNum;
-
-
     public VendingMachine(Cents[] coinKinds, int selectionButtonCount, int coinRackCapacity, int productRackCapacity, int receptacleCapacity) {
 	    this.hardwareFacade = new HardwareFacade(coinKinds, selectionButtonCount, coinRackCapacity, productRackCapacity, receptacleCapacity);
         /* YOU CAN BUILD AND INSTALL THE HARDWARE HERE */
@@ -70,20 +69,7 @@ public class VendingMachine {
 
     public void Configure(List<ProductKind> ProductList)
     {
-        if (buttonNum == ProductList.Count)
-        {
-            foreach(ProductKind PK in ProductList)
-            {
-                if (PK.Cost.Value <= 0)
-                {
-                    throw new ArgumentOutOfRangeException();
-                }
-            }
-            this.ProductList = ProductList;
-        }
-        else
-        {
-            throw new ArgumentException();
-        }
+        this.hardwareFacade.Configure(ProductList);
     }
+
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Frontend4;
 using Frontend4.Hardware;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using seng301_asgn4;
 
 namespace VendingMachineTester {
     [TestClass]

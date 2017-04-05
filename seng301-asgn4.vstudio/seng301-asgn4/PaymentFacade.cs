@@ -17,9 +17,6 @@ namespace seng301_asgn4
         Dictionary<int, int> coinKindToCoinRackIndex;
         int coinValue;
         
-        int Value;
-
-
         public PaymentFacade(HardwareFacade hf)
         {
             this.hf = hf;
@@ -29,11 +26,11 @@ namespace seng301_asgn4
                 this.coinKindToCoinRackIndex[this.hf.GetCoinKindForCoinRack(i).Value] = i;
             }
             //this.CoinKinds = CoinKinds;
-            hf.CoinSlot.CoinAccepted += new EventHandler<CoinEventArgs>(CoinAccept);
-            
+            hf.CoinSlot.CoinAccepted += new EventHandler<CoinEventArgs>(CoinAccept);         
         }
 
 
+        // listens for payment to be made then sends value of the payment to listeners (logic)
         public void CoinAccept(object sender, CoinEventArgs e)
         {
             coinValue = e.Coin.Value.Value;
@@ -72,7 +69,6 @@ namespace seng301_asgn4
 
             return 0;
         }
-
 
     }
 

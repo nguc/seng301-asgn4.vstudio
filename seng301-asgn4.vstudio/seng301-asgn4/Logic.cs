@@ -37,7 +37,8 @@ namespace seng301_asgn4
             {
                 Product.Dispense(index);
                 int change = amountPaid - price;
-                amountPaid = Payment.Change(change);       
+                amountPaid = Payment.Change(change);
+                Payment.StorePayment();       
             }
         }
 

@@ -24,7 +24,7 @@ namespace seng301_asgn4
         public void Dispense(int index)
         {
             hf.ProductRacks.ElementAt(index).DispenseProduct();
-            hf.CoinReceptacle.StoreCoins();
+            
         }
 
     }

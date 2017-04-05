@@ -100,14 +100,14 @@ namespace VendingMachineTester {
             vm.Configure(new List<ProductKind>() { new ProductKind("Coke", new Cents(250)),
                                                             new ProductKind("water", new Cents(250)),
                                                             new ProductKind("stuff", new Cents(205)) });
-            hardware.SelectionButtons[0].Press();
+            hardware.SelectionButtons[0].Press(); 
             var delivery = VMUtility.ExtractDelivery(hardware);
             VMUtility.CheckDelivery(delivery, 0, new string[] { });
 
             hardware.CoinSlot.AddCoin(new Coin(new Cents(100)));
             hardware.CoinSlot.AddCoin(new Coin(new Cents(100)));
             hardware.CoinSlot.AddCoin(new Coin(new Cents(100)));
-            hardware.SelectionButtons[0].Press();
+            hardware.SelectionButtons[0].Press(); // changed index here //
 
             delivery = VMUtility.ExtractDelivery(hardware);
             VMUtility.CheckDelivery(delivery, 50, new string[] { "A" });

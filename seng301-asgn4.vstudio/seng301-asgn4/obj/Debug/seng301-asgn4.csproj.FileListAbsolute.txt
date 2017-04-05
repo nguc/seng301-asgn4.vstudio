@@ -12,3 +12,10 @@ C:\Users\chi_n\Documents\GitHub\seng301-asgn4.vstudio\seng301-asgn4.vstudio\seng
 C:\Users\chi_n\Documents\GitHub\seng301-asgn4.vstudio\seng301-asgn4.vstudio\seng301-asgn4\bin\Debug\seng301-asgn4.dll
 C:\Users\chi_n\Documents\GitHub\seng301-asgn4.vstudio\seng301-asgn4.vstudio\seng301-asgn4\bin\Debug\seng301-asgn4.pdb
 C:\Users\chi_n\Documents\GitHub\seng301-asgn4.vstudio\seng301-asgn4.vstudio\seng301-asgn4\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Chi\Documents\GitHub\seng301-asgn4.vstudio\seng301-asgn4.vstudio\seng301-asgn4\bin\Debug\seng301-asgn4.dll.config
+C:\Users\Chi\Documents\GitHub\seng301-asgn4.vstudio\seng301-asgn4.vstudio\seng301-asgn4\bin\Debug\seng301-asgn4.dll
+C:\Users\Chi\Documents\GitHub\seng301-asgn4.vstudio\seng301-asgn4.vstudio\seng301-asgn4\bin\Debug\seng301-asgn4.pdb
+C:\Users\Chi\Documents\GitHub\seng301-asgn4.vstudio\seng301-asgn4.vstudio\seng301-asgn4\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Chi\Documents\GitHub\seng301-asgn4.vstudio\seng301-asgn4.vstudio\seng301-asgn4\obj\Debug\seng301-asgn4.csprojResolveAssemblyReference.cache
+C:\Users\Chi\Documents\GitHub\seng301-asgn4.vstudio\seng301-asgn4.vstudio\seng301-asgn4\obj\Debug\seng301-asgn4.dll
+C:\Users\Chi\Documents\GitHub\seng301-asgn4.vstudio\seng301-asgn4.vstudio\seng301-asgn4\obj\Debug\seng301-asgn4.pdb

@@ -70,6 +70,11 @@ namespace seng301_asgn4
             return 0;
         }
 
+        public void StorePayment()
+        {
+            hf.CoinReceptacle.StoreCoins();
+        }
+
     }
 
 

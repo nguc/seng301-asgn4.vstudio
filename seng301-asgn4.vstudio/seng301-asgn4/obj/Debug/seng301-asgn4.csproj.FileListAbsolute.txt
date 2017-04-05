@@ -1,0 +1,7 @@
+\\samba.cs.ucalgary.ca\jhgilder\Downloads\seng301-asgn4.vstudio\seng301-asgn4.vstudio\seng301-asgn4\obj\Debug\seng301-asgn4.csprojResolveAssemblyReference.cache
+\\samba.cs.ucalgary.ca\jhgilder\Downloads\seng301-asgn4.vstudio\seng301-asgn4.vstudio\seng301-asgn4\bin\Debug\seng301-asgn4.dll.config
+\\samba.cs.ucalgary.ca\jhgilder\Downloads\seng301-asgn4.vstudio\seng301-asgn4.vstudio\seng301-asgn4\bin\Debug\seng301-asgn4.dll
+\\samba.cs.ucalgary.ca\jhgilder\Downloads\seng301-asgn4.vstudio\seng301-asgn4.vstudio\seng301-asgn4\bin\Debug\seng301-asgn4.pdb
+\\samba.cs.ucalgary.ca\jhgilder\Downloads\seng301-asgn4.vstudio\seng301-asgn4.vstudio\seng301-asgn4\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+\\samba.cs.ucalgary.ca\jhgilder\Downloads\seng301-asgn4.vstudio\seng301-asgn4.vstudio\seng301-asgn4\obj\Debug\seng301-asgn4.dll
+\\samba.cs.ucalgary.ca\jhgilder\Downloads\seng301-asgn4.vstudio\seng301-asgn4.vstudio\seng301-asgn4\obj\Debug\seng301-asgn4.pdb

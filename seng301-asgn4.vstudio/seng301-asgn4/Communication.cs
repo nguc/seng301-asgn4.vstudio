@@ -53,6 +53,12 @@ namespace seng301_asgn4
             }
         }
 
+        // could use this to display the name of the product the user bought/selected
+        public void DisplayProductName(string productName)
+        {
+            //hf.Display.Message = productName;
+        }
+
     }
 
     // new selection event args subclass

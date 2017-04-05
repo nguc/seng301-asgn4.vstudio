@@ -11,6 +11,7 @@ namespace seng301_asgn4
     public class ProductFacade
     {
         HardwareFacade hf;
+
         public ProductFacade(HardwareFacade hf)
         {
             this.hf = hf;
@@ -21,11 +22,16 @@ namespace seng301_asgn4
             return this.hf.ProductKinds[index].Cost.Value;
         }
 
-        public void Dispense(int index)
+        public string Dispense(int index)
         {
             hf.ProductRacks.ElementAt(index).DispenseProduct();
-            
+            string productName = hf.ProductRacks.ElementAt(index).ToString();
+            return productName;
         }
 
+        public void LoadProducts(int[] prodCount)
+        {
+            hf.LoadProducts(prodCount);
+        }
     }
 }

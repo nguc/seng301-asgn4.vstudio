@@ -35,11 +35,15 @@ namespace seng301_asgn4
 
             if (price <= amountPaid)
             {
-                Product.Dispense(index);
+                string productName =  Product.Dispense(index);
+                Com.DisplayProductName(productName);
+
                 int change = amountPaid - price;
                 amountPaid = Payment.Change(change);
+
                 Payment.StorePayment();       
             }
+            // we could send a message here to tell user that they did not enter enough money
         }
 
         // increment payment value 
